@@ -1,6 +1,8 @@
 package com.akansha.microservices.currencyexchangeservice;
 
+import org.hibernate.annotations.CollectionId;
 import org.hibernate.annotations.JoinColumnOrFormula;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +10,7 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 
 //creates a table automatically in the database
-@Entity
+@Document(collection = "CurrencyExchange")
 public class CurrencyExchange {
 
     @Id
@@ -18,7 +20,7 @@ public class CurrencyExchange {
     private String from;
     //from is an identifier in sql therefore using a column name
 
-    @Column(name ="Currency_to")
+    @Column(name ="currency_to")
     private String to;
     private BigDecimal conversionMultiple;
 
