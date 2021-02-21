@@ -17,7 +17,7 @@ public class CurrencyConversionController {
     CurrencyExchangeProxy proxy;
 
 
-    @GetMapping("/currency-conversion/from/{from}/to/{to}/quantity/10")
+    @GetMapping("/currency-conversion/from/{from}/to/{to}/quantity/{quantity}")
     public CurrencyConversion calculateCurrencyConversion(
             @PathVariable String from,
             @PathVariable String to,
